@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mealsapp/categories_screen.dart';
+import 'file:///D:/FlutterUdemyProjects/mealsapp/lib/screens/categories_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,30 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Meals App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: MyHomePage(),
+      home: CategoriesScreen(),
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Meals App"),
-      ),
-      body: Container(
-        child: CategoriesScreen(),
-      ),
-    );
-  }
-}
-
 
