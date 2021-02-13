@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/FlutterUdemyProjects/mealsapp/lib/screens/categories_screen.dart';
+// import 'file:///D:/FlutterUdemyProjects/mealsapp/lib/screens/categories_screen.dart';
+import 'package:mealsapp/screens/tabs_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: CategoriesScreen(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => TabScreen(),
+      },
+      // home: CategoriesScreen(),
     );
   }
 }

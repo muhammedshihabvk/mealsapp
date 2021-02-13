@@ -9,11 +9,12 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey[100],
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text("Meals App"),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white54,
+      //   title: Text("Meals App"),
+      // ),
       body: GridView(
+        physics: BouncingScrollPhysics(),
         padding: EdgeInsets.all(25),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
@@ -22,7 +23,7 @@ class CategoriesScreen extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         children: [
-          ...DUMMY_CATEGORY_DATA.map((catData) => CategoryItem(title: catData.title,color: catData.color,)).toList(),
+          ...DUMMY_CATEGORY_DATA.map((catData) => CategoryItem(title: catData.title,color: catData.color,categoryId: catData.id,)).toList(),
         ],
       ),
     );

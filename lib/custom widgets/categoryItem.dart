@@ -4,18 +4,21 @@ import 'package:mealsapp/screens/category_Meal_Screen.dart';
 class CategoryItem extends StatelessWidget {
   final String title;
   final Color color;
+  final String categoryId;
+
+  CategoryItem({this.title, this.color,this.categoryId});
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(
       builder: (context) {
         return CategoryMealScreen(
-          title: title,
+          title: title,categoryId: categoryId,
         );
       },
     ));
   }
 
-  CategoryItem({this.title, this.color});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
