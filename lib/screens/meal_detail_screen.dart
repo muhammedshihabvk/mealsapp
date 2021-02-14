@@ -27,33 +27,7 @@ class MealDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            sectionDividerText(headingText:  "Ingredients"),
-            Container(
-                height: 150,
-                width: 400,
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.blueGrey[100],
-                  border: Border.all(color: Colors.white54, width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-                ),
-                child: ListView.builder(
-                  padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-                  itemCount: selectedMeal.ingredients.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      color: Colors.amberAccent,
-                      elevation: 3,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(selectedMeal.ingredients[index],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
-                      ),
-                    );
-                  },
-                )
-            ),
-            sectionDividerText(headingText:  "Steps"),
+            sectionDividerText(headingText: "Ingredients"),
             Container(
                 height: 150,
                 width: 400,
@@ -62,10 +36,39 @@ class MealDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.blueGrey[100],
                     border: Border.all(color: Colors.white54, width: 1),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                ),
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
                 child: ListView.builder(
-                  padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  itemCount: selectedMeal.ingredients.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      color: Colors.amberAccent,
+                      elevation: 3,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          selectedMeal.ingredients[index],
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
+                      ),
+                    );
+                  },
+                )),
+            sectionDividerText(headingText: "Steps"),
+            Container(
+                height: 150,
+                width: 400,
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey[100],
+                    border: Border.all(color: Colors.white54, width: 1),
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: ListView.builder(
+                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                   itemCount: selectedMeal.steps.length,
                   itemBuilder: (context, index) {
                     return Card(
@@ -73,26 +76,31 @@ class MealDetailScreen extends StatelessWidget {
                       elevation: 3,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(selectedMeal.steps[index],style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
+                        child: Text(
+                          selectedMeal.steps[index],
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
                       ),
                     );
                   },
-                )
-            ),
+                )),
           ],
         ),
       ),
     );
   }
 
-  Widget sectionDividerText({String headingText}){
+  Widget sectionDividerText({String headingText}) {
     return Container(
       padding: EdgeInsets.only(
         top: 10,
       ),
       child: Text(
         headingText,
-        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
       ),
     );
   }
