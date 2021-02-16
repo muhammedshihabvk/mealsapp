@@ -2,12 +2,12 @@
 
 A new Flutter application.
 
-![Image description](sample.PNG)
-![Image description](sample2.PNG)
-![Image description](sample3.PNG)
-![Image description](sample4.PNG)
-![Image description](sample5.PNG)
-![Image description](sample6.PNG)
+![Image description](sample.png)
+![Image description](sample2.png)
+![Image description](sample3.png)
+![Image description](sample4.png)
+![Image description](sample5.png)
+![Image description](sample6.png)
 
 ## Getting Started
 
