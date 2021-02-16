@@ -2,12 +2,14 @@
 
 A new Flutter application.
 
-![Image description](sample.png)
-![Image description](sample2.png)
-![Image description](sample3.png)
-![Image description](sample4.png)
-![Image description](sample5.png)
-![Image description](sample6.png)
+<img align="left" width="350" height="640" src="sample.png">
+<img align="left" width="350" height="640" src="sample1.png">
+<img align="left" width="350" height="640" src="sample2.png">
+<img align="left" width="350" height="640" src="sample3.png">
+<img align="left" width="350" height="640" src="sample4.png">
+<img align="left" width="350" height="640" src="sample5.png">
+<img align="left" width="350" height="640" src="sample6.png">
+
 
 ## Getting Started
 
