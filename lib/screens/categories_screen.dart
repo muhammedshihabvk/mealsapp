@@ -5,6 +5,9 @@ import 'package:mealsapp/dummyDataFile.dart';
 
 
 class CategoriesScreen extends StatelessWidget {
+
+  static const routeName = '/categoriesScreen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

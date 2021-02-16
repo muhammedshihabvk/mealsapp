@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:mealsapp/custom%20widgets/mealItem.dart';
 import 'package:mealsapp/dummyDataFile.dart';
-// import 'package:mealsapp/model/meal.dart';
 
-class CategoryMealScreen extends StatelessWidget {
+class CategoryMealScreen extends StatefulWidget {
+
+  static const routeName = '/categoryMealScreen';
+
   final String title;
   final String categoryId;
+  // List<Meal> availableMeals;
 
-  CategoryMealScreen({this.title, this.categoryId});
+  CategoryMealScreen({this.title, this.categoryId,});
 
+  @override
+  _CategoryMealScreenState createState() => _CategoryMealScreenState();
+}
+
+class _CategoryMealScreenState extends State<CategoryMealScreen> {
   @override
   Widget build(BuildContext context) {
     final categoryMeals = DUMMY_MEALS.where((meal) {
-      return meal.categories.contains(categoryId);
+      return meal.categories.contains(widget.categoryId);
     }).toList();
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "$title",
+          "${widget.title}",
           style: TextStyle(fontFamily: 'BarlowCondensed'),
         ),
       ),

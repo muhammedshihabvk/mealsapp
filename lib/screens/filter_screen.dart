@@ -4,6 +4,7 @@ import 'package:mealsapp/custom%20widgets/mainDrawer.dart';
 class FilterScreen extends StatefulWidget {
   static const routeName = '/filterScreen';
 
+
   @override
   _FilterScreenState createState() => _FilterScreenState();
 }
@@ -31,8 +32,7 @@ class _FilterScreenState extends State<FilterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your filters"),
-      ),
+        title: Text("Your filters")),
       drawer: MainDrawer(),
       body: Column(
         children: [
