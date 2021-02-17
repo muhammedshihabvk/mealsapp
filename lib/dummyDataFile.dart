@@ -74,7 +74,7 @@ const DUMMY_MEALS = [
       'Bake the toast for round about 10 minutes in the oven at 200°C'
     ],
     isGlutenFree: false,
-    isVegan: false,
+    isVegan: true,
     isVegetarian: false,
     isLactoseFree: false,
   ),
@@ -141,7 +141,7 @@ const DUMMY_MEALS = [
       'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
     ],
     isGlutenFree: false,
-    isVegan: false,
+    isVegan: true,
     isVegetarian: false,
     isLactoseFree: false,
   ),

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mealsapp/screens/filter_screen.dart';
-import 'package:mealsapp/screens/tabs_screen.dart';
 
 class MainDrawer extends StatelessWidget {
 
@@ -39,9 +38,7 @@ class MainDrawer extends StatelessWidget {
             height: 20,
           ),
           buildListTile(title: "Meals",icon: Icons.restaurant,tapHandler: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                  return TabScreen();
-                },));
+                Navigator.of(context).pushReplacementNamed('/');
           },),
           buildListTile(title: "Filter",icon: Icons.filter_alt_outlined,tapHandler: (){
             // Navigator.of(context).pushNamed(FilterScreen.routeName);

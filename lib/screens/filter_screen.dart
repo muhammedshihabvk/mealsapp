@@ -65,7 +65,7 @@ class _FilterScreenState extends State<FilterScreen> {
             'vegetarian': _vegetarian,
           };
           widget.saveFilters(_filters);
-          Navigator.of(context).pop();
+          Navigator.of(context).pushReplacementNamed('/');
 
         },)]
       ),
