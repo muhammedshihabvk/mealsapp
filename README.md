@@ -2,6 +2,14 @@
 
 A new Flutter application.
 
+<img align="left" width="350" height="640" src="sample.png">
+<img align="left" width="350" height="640" src="sample2.png">
+<img align="left" width="350" height="640" src="sample3.png">
+<img align="left" width="350" height="640" src="sample4.png">
+<img align="left" width="350" height="640" src="sample5.png">
+<img align="left" width="350" height="640" src="sample6.png">
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
