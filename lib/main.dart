@@ -4,6 +4,9 @@ import 'package:mealsapp/screens/category_Meal_Screen.dart';
 import 'package:mealsapp/screens/filter_screen.dart';
 import 'package:mealsapp/screens/tabs_screen.dart';
 
+import 'dummyDataFile.dart';
+import 'model/meal.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -16,29 +19,34 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // List<Meal> _availableMeals = DUMMY_MEALS;
+  List<Meal> _availableMeals = DUMMY_MEALS;
 
-  List<String> favorateMeals = ["m1","m3","m5","m5"];
 
-  // Map<String, bool> _filters = {
-  //   'gluten': false,
-  //   'lactose': false,
-  //   'vegan': false,
-  //   'vegetarian': false,
-  // };
+  List<String> favorateMeals = ["m1","m2","m3","m4","m5","m6","m7","m8"];
 
-  // void _setFilters(Map<String,bool> filterData) {
-  //   setState(() {
-  //     _filters = filterData;
-  //     _availableMeals = DUMMY_MEALS
-  //         .where((meal) =>
-  //             meal.isGlutenFree == _filters['gluten'] &&
-  //             meal.isLactoseFree == _filters['lactose'] &&
-  //             meal.isVegan == _filters['vegan'] &&
-  //             meal.isVegetarian == _filters['vegetarian']
-  //     ).toList();
-  //   });
-  // }
+  Map<String, bool> _filters = {
+    'gluten': true,
+    'lactose': false,
+    'vegan': false,
+    'vegetarian': false,
+  };
+
+  void _setFilters(Map<String,bool> filterData) {
+    setState(() {
+      print(filterData);
+      _filters = filterData;
+      _availableMeals = DUMMY_MEALS.where((meal) =>
+              meal.isGlutenFree == _filters['gluten'] &&
+              meal.isLactoseFree == _filters['lactose'] &&
+              meal.isVegan == _filters['vegan'] &&
+              meal.isVegetarian == _filters['vegetarian']
+      ).toList();
+      print("setFil"+ _availableMeals.toString());
+      // _availableMeals.map((e) => print(e.title));
+
+
+    });
+  }
   //
   // void _toggleFavorate(String mealId){
   //   final existingIndex = favorateMeals.indexWhere((meal) => meal == mealId );
@@ -56,6 +64,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    print("building main ");
+    print("setFilin main build"+ _availableMeals.toString());
     return MaterialApp(
       title: 'Meals App',
       theme: ThemeData(
@@ -63,10 +73,10 @@ class _MyAppState extends State<MyApp> {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => TabScreen(favorateMeals: favorateMeals,),
+        '/': (context) => TabScreen(favorateMeals: favorateMeals,availableMeals: _availableMeals==null ? []:_availableMeals,),
         CategoryMealScreen.routeName: (context) => CategoryMealScreen(),
         CategoriesScreen.routeName: (context) => CategoriesScreen(),
-        FilterScreen.routeName: (context) => FilterScreen(),
+        FilterScreen.routeName: (context) => FilterScreen(saveFilters: _setFilters,filtersValue: _filters,),
       },
       // home: CategoriesScreen(),
     );

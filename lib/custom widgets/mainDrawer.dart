@@ -45,7 +45,7 @@ class MainDrawer extends StatelessWidget {
           },),
           buildListTile(title: "Filter",icon: Icons.filter_alt_outlined,tapHandler: (){
             // Navigator.of(context).pushNamed(FilterScreen.routeName);
-            Navigator.of(context).pushReplacementNamed(FilterScreen.routeName);
+            Navigator.of(context).pushNamed(FilterScreen.routeName);
           }),
           buildListTile(title: "Favorite",icon: Icons.star),
 

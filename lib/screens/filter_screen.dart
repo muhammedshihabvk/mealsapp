@@ -5,18 +5,17 @@ class FilterScreen extends StatefulWidget {
   static const routeName = '/filterScreen';
 
   final Function saveFilters;
+  Map<String, bool> filtersValue;
 
-  FilterScreen({this.saveFilters});
+  FilterScreen({this.saveFilters,this.filtersValue});
 
   @override
   _FilterScreenState createState() => _FilterScreenState();
 }
 
 class _FilterScreenState extends State<FilterScreen> {
-  bool _glutenFree = false;
-  bool _vegetarian = false;
-  bool _vegan = false;
-  bool _lactoseFree = false;
+
+
 
   Widget filterRule(
       {String titleText,
@@ -31,12 +30,44 @@ class _FilterScreenState extends State<FilterScreen> {
     );
   }
 
+  bool _glutenFree=false;
+  bool _vegetarian=false;
+  bool _vegan=false;
+  bool _lactoseFree=false;
+
+  @override
+  void didChangeDependencies() {
+    print("did change dep");
+    setState(() {
+      _glutenFree = widget.filtersValue['gluten'];
+       _vegetarian = widget.filtersValue['vegetarian'];
+      _vegan =widget.filtersValue['vegan'];
+      _lactoseFree = widget.filtersValue['lactose'];
+    });
+
+    print(widget.filtersValue['gluten']);
+
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
+  print("filter building");
+  print(_glutenFree);
     return Scaffold(
       appBar: AppBar(
         title: Text("Your filters"),
-        actions: [IconButton(icon: Icon(Icons.save), onPressed: widget.saveFilters)]
+        actions: [IconButton(icon: Icon(Icons.save), onPressed: () {
+          Map<String, bool> _filters = {
+            'gluten': _glutenFree,
+            'lactose': _lactoseFree,
+            'vegan': _vegan,
+            'vegetarian': _vegetarian,
+          };
+          widget.saveFilters(_filters);
+          Navigator.of(context).pop();
+
+        },)]
       ),
       drawer: MainDrawer(),
       body: Column(
