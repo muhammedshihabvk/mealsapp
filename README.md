@@ -3,6 +3,8 @@
 A new Flutter application.
 
 <img align="left" width="350" height="640" src="sample.png">
+<img align="left" width="350" height="640" src="sample7.png">
+<img align="left" width="350" height="640" src="sample8.png">
 <img align="left" width="350" height="640" src="sample2.png">
 <img align="left" width="350" height="640" src="sample3.png">
 <img align="left" width="350" height="640" src="sample4.png">
